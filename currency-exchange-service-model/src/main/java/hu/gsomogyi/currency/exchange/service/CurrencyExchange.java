@@ -1,12 +1,23 @@
-package hu.gsomogyi.currencyexchangeservice;
+package hu.gsomogyi.currency.exchange.service;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
+@Entity(name = "CURRENCY_EXCHANGE")
 public class CurrencyExchange {
 
+    @Id
     private Long id;
+
+    @Column(name = "CURRENCY_FROM")
     private String from;
+
+    @Column(name = "CURRENCY_TO")
     private String to;
+
     private BigDecimal conversionMultiple;
 
     public CurrencyExchange() {
